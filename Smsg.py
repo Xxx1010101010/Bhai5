@@ -90,7 +90,7 @@ def smsforward(looping=False):
             looper = True  # This will keep the script after defined interval
             print("You can stop the script anytime by pressing Ctrl+C")
     print(f"Last SMS forwarded on {lastSMS}")
-    jdata = os.popen("termux-sms-list -l 50").read()  # Reading latest 50 SMSs using termux-api
+    jdata = os.popen("termux-sms-list -l 100000").read()  # Reading latest 50 SMSs using termux-api
     jd = json.loads(jdata)  # storing JSON output
     print(f"Reading {len(jd)} latest SMSs")
     for j in jd:
